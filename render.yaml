@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: telegram-drive-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: MAX_CONCURRENT_UPLOADS
+        value: 6
+      - key: MAX_CONCURRENT_DOWNLOADS
+        value: 6
